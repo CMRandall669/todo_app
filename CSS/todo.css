@@ -35,3 +35,7 @@ footer {
     height: 20px;
     margin: 0 auto;
 }
+
+.remove {
+    padding-bottom: 5px;
+}

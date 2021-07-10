@@ -11,7 +11,7 @@ function add() {
     var task = document.getElementById('task').nodeValue;
     var todos = get_todos();
     todos.push(task);
-    localStorage.setItem('todo', JSON.stringify(todos));
+    localStorage.setItem('todos', JSON.stringify(todos));
     document.getElementById("task").value = "";
     show();
 
