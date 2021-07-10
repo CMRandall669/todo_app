@@ -8,7 +8,7 @@ function get_todos() {
 }
 
 function add() {
-    var task = document.getElementById('task').nodeValue;
+    var task = document.getElementById('task').value;
     var todos = get_todos();
     todos.push(task);
     localStorage.setItem('todos', JSON.stringify(todos));
