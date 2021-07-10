@@ -22,11 +22,26 @@ function show() {
     var todos = get_todos();
     var html = '<ul>';
     for (var i = 0; i < todos.length; i++) {
-        html += '<li>' + todos[i] + '<button class="remove" id="' + i + '">x</button></li>';
+        html += '<li>' + todos[i] + '<button class="remove" id="we' + i + '">X</button></li>';
     };
     html += '</ul>';
     document.getElementById("todos").innerHTML = html;
+
+    var buttons = document.getElementsByTagName('remove');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', remove);
+    };
 }
 
 document.getElementById("add").addEventListener("click", add);
 show();
+
+function remove() {
+    var id = this.getAttribute("we");
+    var todos = get_todos();
+    todos.splice(we, 1);
+    localStorage.setItem("todos", JSON.stringify(todos));
+    show();
+
+    return false;
+}
